@@ -1173,30 +1173,39 @@
     @media (max-width: 520px) {
       .navbar {
         top: 10px;
-        padding: 10px 12px;
-      }
-
-      .logo {
-        font-size: 18px;
-      }
-
-      .logo-badge {
-        width: 32px;
-        height: 32px;
-        border-radius: 10px;
+        padding: 8px 10px;
+        border-radius: 18px;
+        gap: 8px;
       }
 
       .nav-links {
-        gap: 10px;
+        display: none;
+      }
+
+      .logo {
+        font-size: 16px;
+        gap: 6px;
+      }
+
+      .logo-badge {
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
       }
 
       .nav-actions {
-        gap: 8px;
+        gap: 6px;
+        margin-left: auto;
       }
 
       .nav-link {
         font-size: 13px;
         padding: 6px 10px;
+      }
+
+      .chip-btn {
+        padding: 7px 10px;
+        font-size: 12px;
       }
 
       .hero {
