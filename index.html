@@ -1,0 +1,279 @@
+﻿
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SSLLab Fun — центр случайных развлечений</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar" aria-label="Основная навигация">
+    <div class="logo">
+      <span class="logo-badge">FZ</span>
+      SSLLab Fun
+    </div>
+    <nav class="nav-links" aria-label="Разделы">
+      <a class="nav-link" href="#hero" data-section="hero">Главная</a>
+      <a class="nav-link" href="#dashboard" data-section="dashboard">Модули</a>
+      <a class="nav-link" href="#stats" data-section="stats">Статистика</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="chip-btn" id="aboutBtn">О сайте</button>
+      <button class="chip-btn accent" id="modeBtn">Режим игры</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section hero" id="hero">
+      <div class="hero-orbits" aria-hidden="true">
+        <div class="orbit small"></div>
+        <div class="orbit medium"></div>
+        <div class="orbit large"></div>
+      </div>
+      <div class="decor-cube" aria-hidden="true">
+        <div class="cube-spin">
+          <div class="decor-rubik" id="decorCube">
+            <div class="decor-face decor-front">
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+            </div>
+            <div class="decor-face decor-back">
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+            </div>
+            <div class="decor-face decor-right">
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+            </div>
+            <div class="decor-face decor-left">
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+            </div>
+            <div class="decor-face decor-top">
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+            </div>
+            <div class="decor-face decor-bottom">
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container hero-grid">
+        <div>
+          <h1 class="hero-title">SSLLab Fun — центр случайных развлечений</h1>
+          <p class="hero-text">
+            Лёгкий мини-сервис для быстрого отдыха: от генератора отмазок до магического шара
+            и мини-игры. Всё сразу работает, вдохновляет, дарит улыбку и собирает ваши мини-достижения.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#dashboard">Начать играть</a>
+            <button class="ghost-btn" id="heroTip">Показать совет</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Панель развлечений</h3>
+          <p>Соберите серию кликов, откройте достижения и прокачайте настроение. Каждая карточка — новый заряд веселья.</p>
+          <div class="stat-card">
+            <div class="stat-value" id="heroClicks">0</div>
+            <div>кликов сегодня</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="dashboard">
+      <div class="container">
+        <h2 class="section-title">Dashboard SSLLab Fun</h2>
+        <p class="section-subtitle">Пять интерактивных модулей — каждый с собственным характером. Нажимайте, играйте и собирайте достижения.</p>
+
+        <div class="dashboard-grid">
+          <article class="card" id="excuseCard">
+            <h3 class="card-title">Генератор отмазок</h3>
+            <p class="card-desc">Случайная отмазка для любого случая — от работы до внезапного исчезновения.</p>
+            <div class="card-output" id="excuseOutput">Нажмите кнопку, и появится отмазка.</div>
+            <div class="card-footer">
+              <button class="card-btn" id="excuseBtn">Сгенерировать отмазку</button>
+            </div>
+          </article>
+
+          <article class="card" id="ballCard">
+            <h3 class="card-title">Магический шар предсказаний</h3>
+            <p class="card-desc">Шар знает всё: от судьбы до завтрашнего кофе. Спрашивайте, и ответ придёт.</p>
+            <div class="magic-ball" id="magicBall">Слушаю<br>вопрос</div>
+            <div class="card-output" id="ballOutput">Нажмите кнопку, чтобы узнать судьбу.</div>
+            <div class="card-footer">
+              <button class="card-btn" id="ballBtn">Узнать судьбу</button>
+            </div>
+          </article>
+
+          <article class="card" id="moodCard">
+            <h3 class="card-title">Проверка настроения</h3>
+            <p class="card-desc">Моментальный скан настроения. Нажмите, чтобы получить процент и статус.</p>
+            <div class="card-output" id="moodOutput">Готовы узнать своё настроение?</div>
+            <div class="mood-bar" aria-hidden="true"><span id="moodBar"></span></div>
+            <div class="mood-meta">
+              <span id="moodPercent">0%</span>
+              <span id="moodStatus">ожидание</span>
+            </div>
+            <div class="card-footer">
+              <button class="card-btn" id="moodBtn">Проверить настроение</button>
+            </div>
+          </article>
+
+          <article class="card" id="gameCard">
+            <h3 class="card-title">Мини-игра «Угадай кнопку»</h3>
+            <p class="card-desc">Одна из девяти кнопок — выигрышная. Сможете найти?</p>
+            <div class="guess-grid" id="guessGrid" aria-label="Игровые кнопки"></div>
+            <div class="guess-message" id="guessMessage">Выберите кнопку.</div>
+            <div class="card-footer">
+              <span class="card-desc" id="gameStatus">Игры: 0</span>
+            </div>
+          </article>
+
+          <article class="card" id="factCard">
+            <h3 class="card-title">Генератор бесполезных фактов</h3>
+            <p class="card-desc">Немного бесполезной, но весёлой информации, чтобы удивить друзей.</p>
+            <div class="card-output" id="factOutput">Нажмите кнопку, и появится факт.</div>
+            <div class="card-footer">
+              <button class="card-btn accent" id="factBtn">Новый факт</button>
+            </div>
+          </article>
+
+          <article class="card" id="randomCard">
+            <h3 class="card-title">Случайное число</h3>
+            <p class="card-desc">Укажите диапазон и получите мгновенный результат.</p>
+            <div class="random-form">
+              <label>
+                Мин
+                <input type="number" id="randomMin" value="1" />
+              </label>
+              <label>
+                Макс
+                <input type="number" id="randomMax" value="100" />
+              </label>
+            </div>
+            <div class="random-output" id="randomOutput">-</div>
+            <div class="card-footer">
+              <button class="card-btn accent" id="randomBtn">Сгенерировать</button>
+            </div>
+          </article>
+
+          <article class="card" id="counterCard">
+            <h3 class="card-title">Считалка от числа до числа</h3>
+            <p class="card-desc">Задайте диапазон и шаг. Считалка запустится плавно и аккуратно.</p>
+            <div class="counter-form">
+              <label>
+                От
+                <input type="number" id="countFrom" value="1" />
+              </label>
+              <label>
+                До
+                <input type="number" id="countTo" value="20" />
+              </label>
+              <label>
+                Шаг
+                <input type="number" id="countStep" value="1" />
+              </label>
+            </div>
+            <div class="counter-display" id="counterDisplay">Готово</div>
+            <div class="card-footer">
+              <button class="card-btn accent" id="counterStartBtn">Старт</button>
+              <button class="card-btn" id="counterStopBtn">Стоп</button>
+            </div>
+          </article>
+
+          <article class="card" id="diceCard">
+            <h3 class="card-title">Игральная кость</h3>
+            <p class="card-desc">Бросайте кость и получайте случайное число от 1 до 6.</p>
+            <div class="dice-wrap" aria-live="polite">
+              <div class="dice" id="dice" data-value="1">
+                <span class="pip p1"></span>
+                <span class="pip p2"></span>
+                <span class="pip p3"></span>
+                <span class="pip p4"></span>
+                <span class="pip p5"></span>
+                <span class="pip p6"></span>
+                <span class="pip p7"></span>
+              </div>
+              <div class="dice-value" id="diceValue">1</div>
+            </div>
+            <div class="card-footer">
+              <button class="card-btn accent" id="diceRollBtn">Бросить кость</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="stats">
+      <div class="container">
+        <h2 class="section-title">Статистика и достижения</h2>
+        <p class="section-subtitle">Следите за прогрессом, активируйте новые достижения и собирайте небольшие победы.</p>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="totalGenerations">0</div>
+            <div>генераций выполнено</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="gamesPlayed">0</div>
+            <div>игр сыграно</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="winsCount">0</div>
+            <div>побед в игре</div>
+          </div>
+          <div class="stat-card">
+            <h3 class="card-title">Достижения</h3>
+            <div class="achievement-list" id="achievementList"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-title">SSLLab Fun</div>
+      <div>Made for fun · <span id="year"></span></div>
+      <div class="footer-credits">Сайт создан с помощью ИИ. Автор ТГК <a class="tg-link" href="https://t.me/sslleik" target="_blank" rel="noopener">@sslleik</a>. Telegram канал: <a class="tg-link" href="https://t.me/sslleik_vd" target="_blank" rel="noopener">@sslleik_vd</a>.</div>
+      <a class="back-top" href="#hero">Наверх</a>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <div class="modal" id="aboutModal" aria-hidden="true" role="dialog">
+    <div class="modal-card">
+      <h3>О сервисе SSLLab Fun</h3>
+      <p>SSLLab Fun — мини-стартап для перезагрузки. Здесь собраны генераторы, мини-игра и геймификация, чтобы поднимать настроение и собирать микро-достижения.</p>
+      <div class="footer-credits">Сайт создан с помощью ИИ. Автор ТГК <a class="tg-link" href="https://t.me/sslleik" target="_blank" rel="noopener">@sslleik</a>. Telegram канал: <a class="tg-link" href="https://t.me/sslleik_vd" target="_blank" rel="noopener">@sslleik_vd</a>.</div>
+      <div class="modal-actions">
+        <button class="primary-btn" data-close>Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="winModal" aria-hidden="true" role="dialog">
+    <div class="modal-card">
+      <h3>Победа!</h3>
+      <p>Отличная реакция. Вы нашли выигрышную кнопку.</p>
+      <div class="modal-actions">
+        <button class="primary-btn" data-close>Продолжить</button>
+      </div>
+    </div>
+  </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
